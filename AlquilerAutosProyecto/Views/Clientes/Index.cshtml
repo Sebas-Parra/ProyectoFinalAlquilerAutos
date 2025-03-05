@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link href="~/css/BotonAgregar.css" rel="stylesheet" />
+<link href="~/css/Options.css" rel="stylesheet" />
+
+<h1>Informacion Clientes</h1>
+
+
+@* <fieldset class="mb-3"> *@
+@*     <legend>Clientes</legend> *@
+@*     <form id="frmCliente" method="post" class="row g-3"> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="id" class="form-label">ID Clientes</label> *@
+@*             <input type="text" class="form-control" id="id" name="id" placeholder="ID"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="nombre" class="form-label">Nombre</label> *@
+@*             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="apellido" class="form-label">Apellido</label> *@
+@*             <input type="text" class="form-control" maxlength="300" id="apellido" name="apellido" placeholder="Apellido"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="telefono" class="form-label">Telefono</label> *@
+@*             <input type="text" class="form-control" maxlength="300" id="telefono" name="telefono" placeholder="Telefono"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="email" class="form-label">Email</label> *@
+@*             <input type="email" class="form-control" maxlength="300" id="email" name="email" placeholder="Email"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="password" class="form-label">Password</label> *@
+@*             <input type="text" class="form-control" maxlength="300" id="password" name="password" placeholder="Password"> *@
+@*         </div> *@
+@*     </form> *@
+@*     <div class="d-grid gap-2"> *@
+@*         <button class="btn btn-primary" onclick="buscarCliente()" type="button">Buscar</button> *@
+@*         <button class="btn btn-primary" onclick="guardarDatos()" type="button">Guardar</button> *@
+@*         <button class="btn btn-info" type="button" onclick="limpiarDatos()">Limpiar</button> *@
+@*         <button class="btn btn-warning" onclick="modificar()" type="button">Actualizar</button> *@
+
+@*     </div> *@
+
+@* </fieldset> *@
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">¿Desea agregar un nuevo dato?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <fieldset class="mb-3">
+                    <form id="formAgregar" class="forma">
+                        <p class="title">Formulario</p>
+                        <p class="message">Al agregar, se insertará el registro en la tabla</p>
+                        <div class="flex">
+                            <label for="id" class="form-label">
+                                <input type="number" class="input" id="id" name="id" placeholder="" required="" readonly>
+                                <span>ID</span>
+                            </label>
+
+                            <label for="nombre" class="form-label">
+                                <input class="input" type="text" id="nombre" name="nombre" placeholder="" required="">
+                                <span>Nombre</span>
+                            </label>
+
+                        </div>
+
+                        <label for="apellido" class="form-label">
+                            <input class="input" type="text" maxlength="300" id="apellido" name="apellido" placeholder="" required="">
+                            <span>Apellido</span>
+                        </label>
+
+                        <label for="telefono" class="form-label">
+                            <input class="input" type="number" maxlength="300" id="telefono" name="telefono" placeholder="" required="">
+                            <span>Telefono</span>
+                        </label>
+                        <label for="email" class="form-label">
+                            <input class="input" type="email" maxlength="300" id="email" name="email" placeholder="" required="">
+							<span>Email</span>
+                        </label>
+                        <label for="password" class="form-label">
+                            <input class="input" type="password" maxlength="300" id="password" name="password" placeholder="" required="">
+                            <span>Password</span>
+                        </label>
+                        
+                    </form>
+
+                </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btnAgregar" data-bs-dismiss="modal" onclick="guardarDatos()">Añadir</button>
+                <button class="btnLimpiar" type="button" data-bs-dismiss="modal" onclick="modificar()">Actualizar</button>
+                <button class="btnLimpiar" type="button" onclick="limpiarDatos()">Limpiar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="divtabla">
+</div>
+
+<div class="ConetenedorBtn" id="AgregarGenerico">
+
+</div>
+
+<div id="Options-config">
+
+</div>
+
+<div id="AgregarFiltrar">
+
+</div>
+
+<script src="./js/generic.js"></script>
+<script src="./js/Cliente.js"></script>

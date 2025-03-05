@@ -1,0 +1,311 @@
+﻿#Options-config {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Para que esté por encima de otros elementos */
+}
+
+
+.card {
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    background-image: linear-gradient( 139deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, rgb(255, 255, 255) 100% );
+    border-radius: 10px;
+    padding: 15px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    .card .separator {
+        border-top: 1.5px solid #42434a;
+    }
+
+    .card .list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 0px 10px;
+    }
+
+        .card .list .element {
+            display: flex;
+            align-items: center;
+            color: #141414;
+            gap: 10px;
+            transition: all 0.3s ease-out;
+            padding: 4px 7px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+            .card .list .element svg {
+                width: 19px;
+                height: 19px;
+                transition: all 0.3s ease-out;
+            }
+
+            .card .list .element .label {
+                font-weight: 600;
+            }
+
+            .card .list .element:hover {
+                background-color: #5353ff;
+                color: #fff;
+                transform: translate(1px, -1px);
+            }
+
+        .card .list .delete:hover {
+            background-color: #8e2a2a;
+        }
+
+        .card .list .element:active {
+            transform: scale(0.99);
+        }
+
+        .card .list:not(:last-child) .element:hover svg {
+            stroke: #fff;
+        }
+
+        .card .list:last-child svg {
+            stroke: #bd89ff;
+        }
+
+        .card .list:last-child .element {
+            color: #bd89ff;
+        }
+
+            .card .list:last-child .element:hover {
+                background-color: rgba(0, 0, 0, 0.85);
+            }
+
+.modal-body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(5,5,5,1) 0%, rgba(45,50,50,1) 100%, rgba(5,15,18,1) 100%, rgba(0,212,255,1) 100%, rgba(137,143,145,1) 100%);
+    color: #fff;
+}
+
+
+.forma {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: #cf4444;
+}
+
+    .title::before {
+        width: 18px;
+        height: 18px;
+    }
+
+    .title::after {
+        width: 18px;
+        height: 18px;
+        animation: pulse 1s linear infinite;
+    }
+
+    .title::before,
+    .title::after {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        left: 0px;
+        background-color: #cf4444;
+    }
+
+.message,
+.signin {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.signin {
+    text-align: center;
+}
+
+    .signin a:hover {
+        text-decoration: underline royalblue;
+    }
+
+    .signin a {
+        color: #00bfff;
+    }
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+.forma label {
+    position: relative;
+}
+
+    .forma label .input {
+        background-color: #333;
+        color: #fff;
+        width: 100%;
+        padding: 20px 05px 05px 10px;
+        outline: 0;
+        border: 1px solid rgba(105, 105, 105, 0.397);
+        border-radius: 10px;
+    }
+
+        .forma label .input + span {
+            color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            left: 10px;
+            top: 0px;
+            font-size: 0.9em;
+            cursor: text;
+            transition: 0.3s ease;
+        }
+
+        .forma label .input:placeholder-shown + span {
+            top: 12.5px;
+            font-size: 0.9em;
+        }
+
+        .forma label .input:focus + span,
+        .forma label .input:valid + span {
+            color: #cf4444;
+            top: 0px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+
+.input {
+    font-size: medium;
+}
+
+.btnAgregar {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    background-color: #cf4444;
+}
+
+    .btnAgregar:hover {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(5,5,5,1) 0%, rgba(211,26,26,1) 0%, rgba(245,2,2,1) 100%, rgba(5,15,18,1) 100%, rgba(0,212,255,1) 100%);
+    }
+
+.btnLimpiar {
+    background-color: black;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+}
+
+    .btnLimpiar:hover {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(5,5,5,1) 0%, rgba(160,159,159,1) 0%, rgba(66,54,54,1) 82%, rgba(5,15,18,1) 100%, rgba(0,212,255,1) 100%);
+    }
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* MAIN */
+/* =============================================== */
+/*.labelOp {
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    padding: 14px 16px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: .3s;
+}
+
+    .labelOp:hover,
+    .labelOp:focus-within,
+    .labelOp:active {
+        background: hsla(0, 0%, 80%, .14);
+    }
+
+.radio-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    z-index: -1;
+}
+
+.radio-design {
+    width: 22px;
+    height: 22px;
+    border-radius: 100px;
+    background: linear-gradient(to right bottom, hsl(154, 97%, 62%), hsl(225, 97%, 62%));
+    position: relative;
+}
+
+    .radio-design::before {
+        content: '';
+        display: inline-block;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        background: hsl(0, 0%, 90%);
+        transform: scale(1.1);
+        transition: .3s;
+    }
+
+.radio-input:checked + .radio-design::before {
+    transform: scale(0);
+}
+
+.label-text {
+    color: hsl(0, 0%, 60%);
+    margin-left: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 900;
+    transition: .3s;
+}
+
+.radio-input:checked ~ .label-text {
+    color: hsl(0, 0%, 40%);
+}*/

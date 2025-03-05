@@ -1,0 +1,403 @@
+﻿
+
+/* Sección principal */
+.main-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-fluid {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Navegación */
+.navbar {
+    width: 100vw;
+    padding: 15px 30px;
+}
+
+
+/* Contenido */
+.content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    height: 100px;
+    width: 100vw; /* Asegura que ocupe todo el ancho */
+    position: relative;
+}
+
+/* Caja de texto semitransparente */
+.text-box {
+    position: absolute; /* Lo saca del flujo normal */
+    z-index: 2; /* Se coloca por encima de la imagen */
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(141,141,141,1) 0%, rgba(137,143,145,1) 100%, rgba(0,212,255,1) 100%);
+    padding: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+/* Imagen del auto */
+.car-image {
+    background-image: url('https://i.pinimg.com/736x/3f/75/cd/3f75cdb65aab10b6c0fb6831492594f2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute; /* Lo saca del flujo normal */
+    z-index: 1; /* Se coloca por encima de la imagen */
+    transform: translateX(-2.8%); /* Desplaza la imagen 10% hacia la derecha */
+}
+
+/* Botones */
+.btn {
+    margin: 10px 10px 10px 0;
+    padding: 12px 20px;
+}
+
+/* Horario */
+.open-hours {
+    margin-top: 10px;
+    font-size: 14px;
+    color: gray;
+}
+
+/* Marcas / Patrocinadores */
+.brands {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    /*background: #111;*/
+    background-color: dimgray;
+    width: 100vw;
+}
+
+/* Sección de autos */
+#Autos {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    
+}
+
+/* Tarjeta de auto */
+
+/*Titulo de lista*/
+.Title-list{
+    display:block;
+    justify-content:center;
+    text-align:center;
+    align-items:center;
+    margin-top: 25px
+}
+
+    .Title-list .List-Title {
+        color: #cf4444;
+    }
+
+/* Titulos de autos*/
+h3 {
+    color:white;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.PrecioAuto{
+    color:white;
+}
+
+
+.Content-Cars {
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 100%; /* Ocupar todo el ancho */
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 20px; /* Evitar que toque los bordes */
+}
+
+
+.cardCars {
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+    background-color: dimgray;
+}
+
+.card-inner {
+    width: inherit;
+    height: inherit;
+    background: transparent;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+}
+
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background: #cf4444;
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up6 2s ease-in infinite alternate-reverse;
+}
+
+    .circle:nth-child(1) {
+        top: -25px;
+        left: -25px;
+    }
+
+    .circle:nth-child(2) {
+        bottom: -25px;
+        right: -25px;
+        animation-name: move-down1;
+    }
+
+@keyframes move-up6 {
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes move-down1 {
+    to {
+        transform: translateY(10px);
+    }
+}
+
+
+/* From Uiverse.io by dylanharriscameron */
+.car-card {
+    margin-right: 90px;
+    margin-top: 30px;
+    margin-right: 40px;
+    position: relative;
+    width: 200px;
+    height: 350px;
+    border-radius: 14px;
+    z-index: 1111;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+
+
+.bg {
+    justify-content: center;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 190px;
+    height: 340px;
+    z-index: 2;
+    background-image: url('https://i.pinimg.com/474x/10/df/68/10df68ddfceab57cb0ebf4aeaef52a78.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    overflow: hidden;
+    outline: 2px solid white;
+    text-align: center;
+}
+
+.blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    opacity: 1;
+    filter: blur(12px);
+    animation: blob-bounce 5s infinite ease;
+}
+
+@keyframes blob-bounce {
+    0% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+
+    50% {
+        transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+
+    75% {
+        transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+
+    100% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+}
+
+
+
+/* Botón de rentar */
+.car-card button {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid red;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+    .car-card button:hover {
+        background: #cf4444;
+        box-shadow: 0 0 30px 5px #cf4444;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+    }
+
+        .car-card button:hover::before {
+            -webkit-animation: sh02 0.5s 0s linear;
+            -moz-animation: sh02 0.5s 0s linear;
+            animation: sh02 0.5s 0s linear;
+        }
+
+    .car-card button::before {
+        content: '';
+        display: block;
+        width: 0px;
+        height: 86%;
+        position: absolute;
+        top: 7%;
+        left: 0%;
+        opacity: 0;
+        background: #fff;
+        box-shadow: 0 0 50px 30px #fff;
+        -webkit-transform: skewX(-20deg);
+        -moz-transform: skewX(-20deg);
+        -ms-transform: skewX(-20deg);
+        -o-transform: skewX(-20deg);
+        transform: skewX(-20deg);
+    }
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+.car-card button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+}
+
+.car-image-container {
+    width: 100%;
+    height: 180px; /* Mantiene todas las imágenes del mismo tamaño */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita desbordamiento */
+}
+
+    .car-image-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+/* Paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Contenedor de los puntos de paginación */
+#pagination-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+/* Estilo de cada punto */
+.page-dot {
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+    /* Punto activo */
+    .page-dot.active {
+        background-color: #cf4444;
+    }
+
+
+#see-all {
+    margin-top: 15px;
+    padding: 10px 20px;
+    color: dimgray;
+    border: solid;
+}
+    #see-all:hover {
+        background: #cf4444;
+        color: black;
+    }
+
+#back-to-pages {
+    margin-top: 15px;
+    padding: 10px 20px;
+    color: dimgray;
+    border: dimgray;
+    border: solid;
+}
+    #back-to-pages:hover {
+        background: #cf4444;
+        color: black;
+    }

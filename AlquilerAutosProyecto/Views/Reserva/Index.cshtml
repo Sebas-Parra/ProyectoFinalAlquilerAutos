@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link href="~/css/BotonAgregar.css" rel="stylesheet" />
+<link href="~/css/Options.css" rel="stylesheet" />
+
+
+<h1>Reserva</h1>
+
+@* <fieldset class="mb-3"> *@
+@*     <legend>Busqueda</legend> *@
+@*     <form id="frmBusqueda" method="post" class="row g-3"> *@
+
+@*         <div class="col-md-6"> *@
+@*             <label for="id" class="form-label">ID Pago</label> *@
+@*             <input type="text" class="form-control" id="id" name="id" placeholder="Id Pagos"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="clienteId" class="form-label">Id del Cliente</label> *@
+@*             <input type="text" class="form-control" id="clienteId" name="clienteId" placeholder="Id del Cliente"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="vehiculoId" class="form-label">Id del vehiculo</label> *@
+@*             <input type="text" class="form-control" id="vehiculoId" name="vehiculoId" placeholder="Id del vehiculo"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="fechaInicio" class="form-label">Fecha de inicio de Reserva</label> *@
+@*             <input type="date" class="form-control" id="fechaInicio" name="fechaInicio" placeholder="Fecha de inicio de Reserva"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="fechaFin" class="form-label">Fecha de fin de Reserva</label> *@
+@*             <input type="date" class="form-control" id="fechaFin" name="fechaFin" placeholder="Fecha de fin de Reserva"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="estado" class="form-label">Estado de reserva</label> *@
+@*             <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado de reserva"> *@
+@*         </div> *@
+@*     </form> *@
+@*     <div class="d-grid gap-2"> *@
+@*         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="guardarReservas()">Añadir</button> *@
+@*         <button class="btn btn-primary" onclick="buscarReserva()" type="button">Buscar</button> *@
+@*         <button class="btn btn-danger" type="button" onclick="limpiarReserva()">Limpiar</button> *@
+@*         <button class="btn btn-primary" onclick="modificar()" type="button">Actualizar</button> *@
+@*     </div> *@
+
+@* </fieldset> *@
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">¿Desea agregar un nuevo dato?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <fieldset class="mb-3">
+                    <form id="formAgregar" class="forma">
+                        <p class="title">Formulario</p>
+                        <p class="message">Al agregar, se insertará el registro en la tabla</p>
+                        <div class="flex">
+                            <label for="id" class="form-label">
+                                <input type="number" class="input" id="id" name="id" placeholder="" required="" readonly>
+                                <span>ID</span>
+                            </label>
+
+                            <label for="clienteId" class="form-label">
+                                <input class="input" type="number" id="clienteId" name="clienteId" placeholder="" required="">
+                                <span>ID Cliente</span>
+                            </label>
+
+                        </div>
+
+                        <label for="vehiculoId" class="form-label">
+                            <input class="input" type="number" maxlength="300" id="vehiculoId" name="vehiculoId" placeholder="" required="">
+                            <span>ID Vehiculo</span>
+                        </label>
+
+                        <label for="fechaInicio" class="form-label">
+                            <input class="input" type="date" maxlength="300" id="fechaInicio" name="fechaInicio" placeholder="" required="">
+                            <span>Fecha de inicio de Reserva</span>
+                        </label>
+                        <label for="fechaFin" class="form-label">
+                            <input class="input" type="date" maxlength="300" id="fechaFin" name="fechaFin" placeholder="" required="">
+                            <span>Fecha de fin de Reserva</span>
+                        </label>
+                        <label for="estado" class="form-label">
+                            <select id="estado" class="input" name="estado" required>
+                                <option value="">Seleccione el estado de la reserva</option>
+                                <option value="Confirmada">Confirmada</option>
+                                <option value="En curso">En curso</option>
+                                <option value="Finalizada">Finalizada</option>
+                                <option value="Cancelada">Cancelada</option>
+                            </select>
+                        </label>
+
+                    </form>
+
+                </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btnAgregar" data-bs-dismiss="modal" onclick="guardarReservas()">Añadir</button>
+                <button class="btnLimpiar" type="button" data-bs-dismiss="modal" onclick="modificar()">Actualizar</button>
+                <button class="btnLimpiar" type="button" onclick="limpiarReserva()">Limpiar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="divtabla">
+</div>
+
+<div class="ConetenedorBtn" id="AgregarGenerico">
+</div>
+
+<div id="Options-config">
+</div>
+<script src="~/js/generic.js"></script>
+<script src="~/js/Reserva.js"></script>

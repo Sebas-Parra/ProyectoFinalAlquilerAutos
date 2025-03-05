@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "calendario";
+}
+
+<link rel="stylesheet" href="~/css/reservas.css">
+
+
+<div class="calendar">
+    <h2 class="title-calendar">Seleccione el rango de fecha</h2>
+    <div class="calendar-header title-calendar">
+        <button id="prevMonth">&lt;</button>
+        <h2 id="monthYear"></h2>
+        <button id="nextMonth">&gt;</button>
+    </div>
+    <div class="calendar-days">
+        <div class="day-name">Dom</div>
+        <div class="day-name">Lun</div>
+        <div class="day-name">Mar</div>
+        <div class="day-name">Mié</div>
+        <div class="day-name">Jue</div>
+        <div class="day-name">Vie</div>
+        <div class="day-name">Sáb</div>
+    </div>
+    <div id="calendar-body" class="calendar-body"></div>
+</div>
+
+<button onclick="cancelar()" class="btn-cancelar">Cancelar</button>
+<a onclick="guardarReservas()" href="#open-modal" class="btn-reservar">Reservar</a>
+
+<div id="open-modal" class="modal-window">
+    <div class="interior">
+        <a onclick="eliminar()" href="#" title="Close" class="modal-close">Close</a>
+        <div class="form-container">
+            <h2>Formulario de Pago</h2>
+            <form id="paymentForm" method="post">
+                <div class="form-group">
+                    <label for="monto">Monto:</label>
+                    <input type="number" id="monto" name="monto" step="0.01" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="metodoPago">Método de Pago:</label>
+                    <select id="metodoPago" name="metodoPago" required>
+                        <option value="">Seleccione un método</option>
+                        <option value="tarjeta">Tarjeta de Crédito</option>
+                        <option value="transferencia">Transferencia Bancaria</option>
+                        <option value="paypal">Efectivo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Fecha:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <a class="btn-pagar" href="#" onclick="guardarPagos()">Enviar Pago</a>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/js/generic.js"></script>
+<script src="~/js/calendario.js"></script>

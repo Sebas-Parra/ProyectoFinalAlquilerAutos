@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link href="~/css/BotonAgregar.css" rel="stylesheet" />
+<link href="~/css/Options.css" rel="stylesheet" />
+
+
+<h1>Pagos</h1>
+
+@* <fieldset class="mb-3"> *@
+@*     <legend>Busqueda</legend> *@
+@*     <form id="frmBusqueda" method="post" class="row g-3"> *@
+
+@*         <div class="col-md-6"> *@
+@*             <label for="id" class="form-label">ID Pago</label> *@
+@*             <input type="text" class="form-control" id="id" name="id" placeholder="Id Pagos"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="reservaId" class="form-label">Id de la Reserva</label> *@
+@*             <input type="text" class="form-control" id="reservaId" name="reservaId" placeholder="Id de la Reserva"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="monto" class="form-label">Monto</label> *@
+@*             <input type="text" class="form-control" id="monto" name="monto" placeholder="Monto"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="metodoPago" class="form-label">Metodo de Pago</label> *@
+@*             <input type="text" class="form-control" id="metodoPago" name="metodoPago" placeholder="Metodo de Pago"> *@
+@*         </div> *@
+@*         <div class="col-md-6"> *@
+@*             <label for="date" class="form-label">Fecha de Pago</label> *@
+@*             <input type="text" class="form-control" id="date" name="date" placeholder="Fecha de Pago"> *@
+@*         </div> *@
+@*     </form> *@
+@*     <div class="d-grid gap-2"> *@
+@*         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="guardarPagos()">Añadir</button> *@
+@*         <button class="btn btn-primary" onclick="buscarPago()" type="button">Buscar</button> *@
+@*         <button class="btn btn-danger" type="button" onclick="limpiarPagos()">Limpiar</button> *@
+@*         <button class="btn btn-primary" onclick="modificar()" type="button">Actualizar</button> *@
+@*     </div> *@
+
+@* </fieldset> *@
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">¿Desea agregar un nuevo dato?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <fieldset class="mb-3">
+                    <form id="formAgregar" class="forma">
+                        <p class="title">Formulario</p>
+                        <p class="message">Al agregar, se insertará el registro en la tabla</p>
+                        <div class="flex">
+                            <label for="id" class="form-label">
+                                <input type="number" class="input" id="id" name="id" placeholder="" required="" readonly>
+                                <span>ID</span>
+                            </label>
+
+                            <label for="reservaId" class="form-label">
+                                <input class="input" type="number" id="reservaId" name="reservaId" placeholder="" required="">
+                                <span>ID Reserva</span>
+                            </label>
+
+                        </div>
+
+                        <label for="monto" class="form-label">
+                            <input class="input" type="number" step="0.01" maxlength="300" id="monto" name="monto" placeholder="" required="">
+                            <span>Monto</span>
+                        </label>
+
+                        <label for="metodoPago" class="form-label">
+                            <select id="metodoPago" class="input" name="metodoPago" required>
+                                <option value="">Seleccione un método de Pago</option>
+                                <option value="Tarjeta">Tarjeta de Crédito</option>
+                                <option value="Transferencia">Transferencia Bancaria</option>
+                                <option value="Efectivo">Efectivo</option>
+                            </select>
+                        </label>
+                        <label for="date" class="form-label">
+                            <input class="input" type="date" maxlength="300" id="date" name="date" placeholder="" required="">
+                            <span>Fecha de Pago</span>
+                        </label>
+
+                    </form>
+
+                </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btnAgregar" data-bs-dismiss="modal" onclick="guardarPagos()">Añadir</button>
+                <button class="btnLimpiar" type="button" data-bs-dismiss="modal" onclick="modificar()">Actualizar</button>
+                <button class="btnLimpiar" type="button" onclick="limpiarDatos()">Limpiar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="divtabla">
+</div>
+
+<div class="ConetenedorBtn" id="AgregarGenerico">
+</div>
+
+    <div id="Options-config">
+    </div>
+
+<script src="~/js/Pagos.js"></script>
+<script src="~/js/generic.js"></script>

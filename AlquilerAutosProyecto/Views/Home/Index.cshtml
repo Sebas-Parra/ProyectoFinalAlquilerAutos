@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<link rel="stylesheet" href="~/css/Home.css">
+
+
+
+<div class="container-fluid main-section">
+
+    <!-- Contenido principal -->
+    <div class="row content">
+        <div class="col-md-6 text-box">
+            <h1>Encuentra el auto perfecto para tu viaje.</h1>
+            <p>Quiero un viaje largo con música a todo volumen.</p>
+            <button class="btn btn-dark">Misión</button>
+            <button class="btn btn-outline-light">Vision</button>
+            <p class="open-hours">Öppettider 09:00 - 17:00</p>
+        </div>
+        <div class="col-md-6 car-image"></div>
+    </div>
+
+    <!-- Marcas / patrocinadores -->
+    <div class="brands">
+        <span class="br1"> BR TURBO</span>
+        <span class="br1">AUTEL</span>
+        <span class="br1">KenLift</span>
+        <span class="br1">BEST SYSTEMS</span>
+    </div>
+</div>
+
+<div class="Title-list">
+<h2 class="List-Title">Lista de Autos</h2>
+</div>
+<!-- Contenedor donde se mostrarán los autos -->
+<div class="Content-Cars">
+    <div class="cardCars">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="card-inner">
+            <div id="Autos" class="cars-grid"></div>
+        </div>
+    </div>
+        
+</div>
+
+
+<!-- Indicadores de página -->
+<div class="pagination">
+    <div id="pagination-dots"></div>
+</div>
+
+
+<!-- Botón para ver todos los autos -->
+<!-- Botón para ver todos los autos -->
+<div class="text-center mt-3">
+    <button id="see-all" class="btn btn-outline-light">See All</button>
+    <button id="back-to-pages" class="btn btn-outline-light" style="display: none;">Back to Pages</button>
+</div>
+
+
+
+<script src="/js/generic.js"></script>
+<script src="/js/Home.js"></script>
+<script>
+    var currentView = "@ViewData["CurrentView"]";  // Pasamos la vista a JavaScript
+</script>
+
+<link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+
+<script src="~/js/site.js"></script>

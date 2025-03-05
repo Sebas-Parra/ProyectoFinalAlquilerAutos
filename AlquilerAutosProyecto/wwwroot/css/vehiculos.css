@@ -1,0 +1,193 @@
+﻿
+.container-index-all {
+    background-color: dimgray !important;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-size: 100% 90vh;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.container-index {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    background-color: dimgray !important;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+    .title span {
+        color: #e63946;
+    }
+
+.subtitle {
+    font-size: 24px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.model-year {
+    text-align: right;
+    font-size: 1.3rem;
+}
+
+    .model-year span {
+        color: #e63946;
+    }
+
+.watch-video {
+    font-size: 1rem;
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: transparent;
+    border: 1px solid #e63946;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 0;
+}
+
+    .watch-video:hover {
+        text-decoration: none;
+        color: #e63946;
+    }
+
+/* Nuevo estilo para el contenido principal en dos columnas */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4em 0;
+    gap: 8em;
+    background-color: dimgray !important;
+}
+
+.description-section {
+    width: 45%;
+    position: relative;
+    top: 0;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.car-section {
+    width: 80%;
+    position: relative;
+    text-align: center;
+}
+
+.car-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.test-drive-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #e63946;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+    .test-drive-btn:hover {
+        background-color: #f05d62;
+    }
+
+.specs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spec-value {
+    font-size: 36px;
+    color: #e63946;
+    margin-bottom: 5px;
+}
+
+.spec-label {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.warranty {
+    margin-top: 40px;
+    font-size: 24px;
+}
+
+    .warranty span {
+        color: #e63946;
+        font-size: 36px;
+    }
+
+.scroll-hint {
+    text-align: center;
+    margin-top: 40px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .description-section {
+        max-width: 100%;
+    }
+
+    .description-section {
+        order: 2;
+    }
+
+    .car-section {
+        order: 1;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .header {
+        flex-direction: column;
+    }
+
+    .model-year {
+        text-align: left;
+        margin-top: 20px;
+    }
+}
